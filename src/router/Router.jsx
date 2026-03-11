@@ -10,6 +10,7 @@ import HomePage from "../pages/HomePage";
 import ContactUs from "../pages/ContactUs";
 import AboutUs from "../pages/AboutUs";
 import ProductGallery from "../pages/ProductGallery";
+import ProductDetail from "../pages/ProductDetail";
 
 function Router() {
   return (
@@ -24,6 +25,7 @@ function Router() {
 
         <Route path="/productgallery" element={<ProductGallery />} />
         <Route path="/contact" element={<ContactUs />} />
+        <Route path="/products/:id" element={<ProductDetail />} />
       </Routes>
 
       {/* Footer shown on all pages */}
