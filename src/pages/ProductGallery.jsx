@@ -16,7 +16,7 @@ import diny2 from "../assets/diny2.jpg";
 import office from "../assets/office.webp";
 import office2 from "../assets/office2.webp";
 
-// ✅ Export products array so ProductDetail can use it
+/* Export products so ProductDetail can use them */
 export const products = [
   { id: 1, name: "Modern Chair", image: bed, price: "₦700,000", description: "Comfortable luxury sofa." },
   { id: 2, name: "Luxury Chair", image: chair6, price: "₦400,000", description: "Stylish modern chair." },
@@ -37,27 +37,41 @@ export const products = [
 
 function ProductGallery() {
   return (
-    <div className="p-10">
-      <h2 className="text-3xl font-bold text-center mb-8">Our Products</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+    <div className="px-4 sm:px-6 md:px-10 py-10 max-w-7xl mx-auto">
+
+      <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-10">
+        Our Products
+      </h2>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
+
         {products.map((product) => (
           <Link
             key={product.id}
             to={`/products/${product.id}`}
-            className="shadow-lg rounded-lg overflow-hidden hover:scale-105 transform transition duration-300 block"
+            className="shadow-lg rounded-lg overflow-hidden hover:scale-105 transform transition duration-300 block bg-white"
           >
             <img
               src={product.image}
               alt={product.name}
-              className="w-full h-64 object-cover"
+              className="w-full h-56 sm:h-60 md:h-64 object-cover"
             />
+
             <div className="p-4 text-center">
-              <h3 className="text-xl font-semibold">{product.name}</h3>
-              <p className="text-gray-600 mt-1">{product.price}</p>
+              <h3 className="text-lg md:text-xl font-semibold">
+                {product.name}
+              </h3>
+
+              <p className="text-gray-600 mt-1 text-sm md:text-base">
+                {product.price}
+              </p>
             </div>
+
           </Link>
         ))}
+
       </div>
+
     </div>
   );
 }

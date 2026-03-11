@@ -8,9 +8,13 @@ function ProductDetail() {
 
   if (!product) {
     return (
-      <div className="p-10 text-center">
-        <h2 className="text-2xl font-bold">Product not found</h2>
-        <Link to="/products" className="text-blue-500 underline mt-4 inline-block">
+      <div className="px-4 py-10 text-center">
+        <h2 className="text-xl md:text-2xl font-bold">Product not found</h2>
+
+        <Link
+          to="/productgallery"
+          className="text-blue-500 underline mt-4 inline-block"
+        >
           Back to Products
         </Link>
       </div>
@@ -18,21 +22,38 @@ function ProductDetail() {
   }
 
   return (
-    <div className="p-10 max-w-4xl mx-auto">
+    <div className="px-4 md:px-10 py-10 max-w-4xl mx-auto">
+
+      {/* Product Image */}
       <img
         src={product.image}
         alt={product.name}
-        className="w-full h-96 object-cover rounded-lg mb-6"
+        className="w-full h-64 sm:h-80 md:h-96 object-cover rounded-lg mb-6"
       />
-      <h2 className="text-3xl font-bold mb-2">{product.name}</h2>
-      <p className="text-xl text-gray-700 mb-4">{product.price}</p>
-      <p className="text-gray-600 mb-6">{product.description}</p>
+
+      {/* Product Name */}
+      <h2 className="text-2xl md:text-3xl font-bold mb-2">
+        {product.name}
+      </h2>
+
+      {/* Price */}
+      <p className="text-lg md:text-xl text-gray-700 mb-4">
+        {product.price}
+      </p>
+
+      {/* Description */}
+      <p className="text-gray-600 text-sm md:text-base mb-6">
+        {product.description}
+      </p>
+
+      {/* Back Button */}
       <Link
         to="/productgallery"
-        className="bg-gray-700 text-white px-4 py-2 rounded hover:bg-gray-800"
+        className="inline-block bg-gray-700 text-white px-4 py-2 rounded hover:bg-gray-800 transition"
       >
         Back to ProductGallery
       </Link>
+
     </div>
   );
 }
