@@ -19,7 +19,7 @@ function Navbar() {
         {/* Tagline - hidden on small screens */}
         <div className="hidden lg:block">
           <strong className="font-semibold text-center">
-            THINK HOME, THINK FULKFURNITURE
+            THINK HOME, THINK FOLKSFURNITURE
           </strong>
         </div>
 
